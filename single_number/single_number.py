@@ -8,13 +8,14 @@ def single_number(arr):
     # sort the arr
     arr.sort()
 
+    # handle head and tail edge cases:
     if arr[0] != arr[1]:
         return arr[0]
 
     if arr[len(arr)-1] != arr[len(arr)-2]:
         return arr[len(arr)-1]
 
-    # loop through the arr if it's a pair, increment 2
+    # loop through the arr to check if the item is not equal to both previous and next item
     for i in range(1, len(arr)-1):
         prev_item = arr[i-1]
         next_item = arr[i+1]
