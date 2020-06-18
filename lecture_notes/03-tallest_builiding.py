@@ -1,3 +1,7 @@
+'''
+edabit challenge Height of the Tallest Building link: https://edabit.com/challenge/LuBtaT9dwStbd7mnK
+'''
+
 # Questions
 # How do I count height?
 # Why are there empty rows?
@@ -16,15 +20,16 @@ Should return "20m"
 
 def tallest_building_height(floors):
     max_floor_count = 0
-
     # determine longest string
     longest_string = 0
 
     for floor in floors:
         if len(floor) > longest_string:
+            longest_string = len(floor)
 
-            # create a list that keeps track of the number of # that have occurred repeatedly in one column
-    floor_streak = [0] * len(floor[0])
+     # create a list that keeps track of the
+     # number of # that have occurred repeatedly in one column
+    floor_streak = [0] * longest_string
     # loop through each string in the input list
     for floor in floors:
         # loop through each char in the current string
