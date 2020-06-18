@@ -4,6 +4,19 @@ Returns: an integer
 '''
 
 
+def eating_cookies_naive(n):
+    '''
+    Naive recursive brute-force solution
+    O(3^n) time, O(3^n) space
+    '''
+    if n < 0:
+        return 0
+    elif n == 0:
+        return 1
+    else:
+        return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
+
+
 def eating_cookies(n, cache=None):
     # check for negative values
     if n < 0:
@@ -19,17 +32,16 @@ def eating_cookies(n, cache=None):
     # if no cache yet, create one
     if cache is None:
         cache = {}
+
     # check for previously computed answer in our cache
     if n in cache:
-        # return cache[n]
         return cache[n]
 
     # this represents our recursive case
     # three possible decisions
     # eat 1 cookie, 2 cookies, or 3 cookies
     cache[n] = eating_cookies(
-        n-1, cache)+eating_cookies(n-2, cache)+eating_cookies(n-3, cache)
-
+        n-1, cache) + eating_cookies(n-2, cache) + eating_cookies(n-3, cache)
     return cache[n]
 
 

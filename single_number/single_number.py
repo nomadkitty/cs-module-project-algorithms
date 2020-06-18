@@ -60,6 +60,14 @@ def single_number_optimized_2(arr):  # O(n) for time O(1) for space
     return list(s)[0]
 
 
+def single_number_optimized_3(arr):
+    result = arr[0]
+
+    for x in arr[1:]:
+        result = result ^ x
+    return result
+
+
 if __name__ == '__main__':
     # Use the main function to test your implementation
     arr = [1, 1, 4, 4, 5, 5, 3, 3, 9, 0, 0]
