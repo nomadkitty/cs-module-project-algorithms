@@ -30,7 +30,7 @@ def sliding_window_max(nums, k):
         # append newest num to window
         window.append(num)
         # remove 1st num of the window
-        # if it equal the current_max
+        # check if it equal the current_max
         if window.pop(0) == current_max:
             # reassign the current_max value
             current_max = max(window)
